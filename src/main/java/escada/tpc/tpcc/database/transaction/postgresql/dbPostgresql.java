@@ -492,7 +492,7 @@ public class dbPostgresql extends dbTPCCDatabase {
 
 			statement = con.createStatement();
 			statement.execute("begin transaction");
-			statement.execute("set transaction isolation level serializable");
+			statement.execute("set transaction isolation level repeatable read");
 			statement.execute("select '" + strTrans + "'");
 
 			Date NetFinishTime = new java.util.Date();
